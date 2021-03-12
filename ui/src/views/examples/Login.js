@@ -80,7 +80,16 @@ class Login extends React.Component {
             localStorage.setItem('USER_TYPE_ID', AfterLoginData.USER_TYPE_ID);
             localStorage.setItem('LOGIN_ID', AfterLoginData.LOGIN_ID);
             localStorage.setItem('UID', AfterLoginData.ID);
-            this.props.history.push('/admin');
+            if (AfterLoginData.USER_TYPE_ID === 1) {
+              this.props.history.push('/admin');
+            } else if (AfterLoginData.USER_TYPE_ID === 2) {
+              this.props.history.push('/admin');
+            } else if (AfterLoginData.USER_TYPE_ID === 3) {
+              this.props.history.push('/user');
+            } else if (AfterLoginData.USER_TYPE_ID === 4) {
+              this.props.history.push('/studio');
+            }
+
           }
           else {
             //console.log(reqdata.statmsg); 

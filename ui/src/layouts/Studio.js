@@ -22,7 +22,7 @@ class Studio extends React.Component {
         localStorage.getItem("SESSION_KEY") == "") {
         this.props.history.push('/auth');
       }
-      else if (prop.layout === "/admin") {
+      else if (prop.layout === "/studio") {
         return (
           <Route
             path={prop.layout + prop.path}
@@ -36,10 +36,10 @@ class Studio extends React.Component {
     });
   };
   getBrandText = path => {
-    for (let i = 0; i < routes.length; i++) {
+    for (let i = 0; i < routes.studioRoutes.length; i++) {
       if (
         this.props.location.pathname.indexOf(
-          routes[i].layout + routes[i].path
+          routes.studioRoutes[i].layout + routes.studioRoutes[i].path
         ) !== -1
       ) {
         return routes[i].name;
@@ -52,9 +52,9 @@ class Studio extends React.Component {
       <>
         <Sidebar
           {...this.props}
-          routes={routes}
+          routes={routes.studioRoutes}
           logo={{
-            innerLink: "/admin/index",
+            innerLink: "/studio/index",
             imgSrc: logo,
             imgAlt: "..."
           }}
@@ -62,11 +62,10 @@ class Studio extends React.Component {
         <div className="main-content" ref="mainContent">
           <AdminNavbar
             {...this.props}
-            brandText={this.getBrandText(this.props.location.pathname)}
           />
           <Switch>
-            {this.getRoutes(routes)}
-            <Redirect from="*" to="/admin/index" />
+            {this.getRoutes(routes.studioRoutes)}
+            <Redirect from="*" to="/studio/index" />
           </Switch>
           <Container fluid>
             <AdminFooter />

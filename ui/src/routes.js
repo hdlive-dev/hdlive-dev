@@ -254,6 +254,105 @@ var userRoutes = [
   }
 ];
 
+var studioRoutes = [
+  {
+    path: "/index",
+    name: "Dashboard",
+    icon: "ni ni-tv-2 text-primary",
+    component: Index,
+    layout: "/studio",
+    Inmenu: "yes"
+  },
+  {
+    path: "/addstream",
+    name: "Update Stream",
+    icon: "ni ni-planet text-blue",
+    component: AddStream,
+    layout: "/studio",
+    Inmenu: "no"
+  },
+  {
+    path: "/Createstream",
+    name: "Create Stream",
+    icon: "ni ni-planet text-blue",
+    component: CreateStream,
+    layout: "/studio",
+    Inmenu: "yes"
+  },
+  {
+    path: "/viewstream",
+    name: "View Stream",
+    icon: "ni ni-planet text-blue",
+    component: ViewStream,
+    layout: "/studio",
+    Inmenu: "yes"
+  },
+  {
+    path: "/CreatestreamPlan",
+    name: "Create Plans",
+    icon: "ni ni-planet text-blue",
+    component: CreateStreamPlan,
+    layout: "/studio",
+    Inmenu: "yes"
+  },
+  {
+    path: "/viewstreamPlan",
+    name: "View Plans",
+    icon: "ni ni-planet text-blue",
+    component: ViewStreamPlan,
+    layout: "/studio",
+    Inmenu: "yes"
+  },
+  {
+    path: "/ViewPlanPurchase",
+    name: "Purchase Plan",
+    icon: "ni ni-planet text-blue",
+    component: ViewPlanPurchase,
+    layout: "/studio",
+    Inmenu: "no"
+  },
+  {
+    path: "/PurchasePlan",
+    name: "Purchase Plan",
+    icon: "ni ni-planet text-blue",
+    component: PurchasePlan,
+    layout: "/studio",
+    Inmenu: "yes"
+  },
+  {
+    path: "/ConfirmPurchasePlan",
+    name: "Confirm Plan and Do Payment",
+    icon: "ni ni-planet text-blue",
+    component: ConfirmPurchasePlan,
+    layout: "/studio",
+    Inmenu: "no"
+  },
+  {
+    path: "/maps",
+    name: "Maps",
+    icon: "ni ni-pin-3 text-orange",
+    component: Maps,
+    layout: "/studio",
+    Inmenu: "yes"
+  },
+  {
+    path: "/user-profile",
+    name: "User Profile",
+    icon: "ni ni-single-02 text-yellow",
+    component: Profile,
+    layout: "/studio",
+    Inmenu: "yes"
+  },
+  {
+    path: "/Changepassword",
+    name: "Change Password",
+    icon: "ni ni-single-02 text-yellow",
+    component: ChangePWD,
+    layout: "/studio",
+    Inmenu: "yes"
+  }
+];
+
 var authRoutes = [
   {
     path: "/login",
@@ -272,4 +371,4 @@ var authRoutes = [
     Inmenu: "yes"
   }
 ];
-export default { routes, userRoutes, authRoutes };
+export default { routes, userRoutes, authRoutes, studioRoutes };
